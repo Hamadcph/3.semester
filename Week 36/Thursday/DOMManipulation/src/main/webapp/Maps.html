@@ -1,0 +1,76 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <p id="folks">
+
+        </p>
+
+        <form>
+
+            <input type="text" id="regulator"><br>
+            <button id="button">Submit</button>
+
+            <button id="removeFirst">remove First</button>
+            <button id="removeLast">remove last</button>
+
+        </form>
+
+
+
+
+
+        <script>
+            let folks = document.getElementById("folks");
+            let people = ["Hamad", "jabs", "Saz", "Benji", "Nikiboy"];
+
+            function listOfPeople() {
+                let lt = people.map(person => "<li>" + person + "</li>");
+                lt.unshift("<ul>");
+                lt.push("</ul>");
+                folks.innerHTML = lt.join("");
+            }
+            listOfPeople();
+
+            function addNames(names) {
+                names.preventDefault();
+                let newName = document.getElementById("regulator").value;
+                people.push(newName);
+                listOfPeople();
+            }
+            let btn = document.getElementById("button");
+            btn.addEventListener("click", function (names) {
+                addNames(names);
+            });
+
+            function removeF(first) {
+                first.preventDefault();
+                people.shift();
+                listOfPeople();
+            }
+            document.getElementById("removeFirst").addEventListener("click", function (first) {
+                removeF(first);
+            });
+
+            function removeL(last) {
+                last.preventDefault();
+                people.pop();
+                listOfPeople();
+            }
+            document.getElementById("removeLast").addEventListener("click", function (last) {
+                removeF(last);
+            });
+
+
+
+
+
+        </script>
+
+    </body>
+</html>

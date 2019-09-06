@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    
+
+    <body>
+        <h1>Hello World!</h1>
+        <button onclick="clickColoring()">Try it</button>
+        <div id="name">
+            <p>Div1</p>
+        </div>
+        
+        <div id="age">
+            <p>Div2</p>
+        </div>
+        
+        <div id="food">
+            <p>Div3</p>
+        </div>
+
+        <script>
+            function ColorFunction() {
+                let div = Array.from(document.body.getElementsByTagName('div'));
+                div.forEach(element => {
+                    element.style.backgroundColor = "blue";
+                });
+            }
+            ColorFunction();
+            
+            function clickColoring() {
+                document.getElementById("name").style.backgroundColor = "green";
+                document.getElementById("age").style.backgroundColor  = "orange";
+                document.getElementById("food").style.backgroundColor  = "yellow";
+                
+            }
+        </script>
+
+
+    </body>
+</html>
